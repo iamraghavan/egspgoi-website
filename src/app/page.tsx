@@ -13,6 +13,7 @@ import {
   Phone,
   Building,
   Menu,
+  MapPin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,7 +32,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-const institutions = [
+const colleges = [
   {
     name: "EGS Pillay Engineering College",
     description: "B.Tech, BE, MBA, MCA, ME Programs.",
@@ -69,12 +70,6 @@ const institutions = [
     hint: "science laboratory",
   },
   {
-    name: "EGS Pillay International School",
-    description: "CBSE curriculum for a world-class education.",
-    image: "https://placehold.co/600x400",
-    hint: "school children",
-  },
-  {
     name: "EGS Pillay Naturopathy and Yoga Medical College",
     description: "Holistic healthcare through naturopathy and yoga.",
     image: "https://placehold.co/600x400",
@@ -82,23 +77,19 @@ const institutions = [
   },
 ];
 
-const requiredDocuments = [
-  "10th & 12th Mark Sheets",
-  "Transfer Certificate (TC)",
-  "Community Certificate",
-  "Passport Size Photos (4)",
-  "Aadhaar Card",
-  "Bachelor's Degree (for PG courses)",
-];
+const schools = [
+    {
+    name: "EGS Pillay International School",
+    description: "CBSE curriculum for a world-class education.",
+    image: "https://placehold.co/600x400",
+    hint: "school children",
+  },
+]
 
-const importantDates = [
-  { event: "Application Start Date", date: "June 1st, 2025" },
-  { event: "Application End Date", date: "August 15th, 2025" },
-  { event: "Entrance Exam (if applicable)", date: "August 20th, 2025" },
-  { event: "First Merit List", date: "August 25th, 2025" },
-];
+const institutions = [...colleges, ...schools];
 
 export default function Home() {
+  const currentYear = new Date().getFullYear();
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm">
@@ -111,7 +102,7 @@ export default function Home() {
             <Link href="#admissions" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Admissions</Link>
              <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary focus-visible:ring-0">
+                <Button variant="ghost" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary hover:bg-transparent focus-visible:ring-0">
                   Institutions
                 </Button>
               </DropdownMenuTrigger>
@@ -151,32 +142,33 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-        <section className="relative flex h-[70vh] w-full items-center justify-center bg-primary text-primary-foreground">
-          <div className="absolute inset-0">
-            <Image
-              src="https://placehold.co/1920x1080"
-              alt="EGS Pillay Campus"
-              data-ai-hint="university campus"
-              fill
-              className="object-cover opacity-10"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-primary" />
-          </div>
-          <div className="container relative text-center">
-            <h1 className="text-4xl font-black tracking-tight md:text-6xl lg:text-7xl">
-              Admissions Open 2025-2026
-            </h1>
-            <p className="mx-auto mt-4 max-w-3xl text-lg text-primary-foreground/80">
-              Your future starts here. Discover our wide range of programs and
-              kickstart your career with us at one of our esteemed institutions.
-            </p>
-            <div className="mt-8 flex justify-center gap-4">
-              <Button size="lg" variant="secondary" asChild>
-                <a href="#institutions">Explore Institutions</a>
-              </Button>
-              <Button size="lg" className="bg-accent hover:bg-accent/90" asChild>
-                <a href="#contact">Apply Now</a>
-              </Button>
+        <section className="relative flex h-[80vh] w-full items-center bg-secondary">
+          <div className="container grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+            <div className="text-left">
+              <h1 className="text-4xl font-black tracking-tight text-primary md:text-5xl lg:text-6xl">
+                Admissions Open 2025-2026
+              </h1>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                Your future starts here. Discover our wide range of programs and
+                kickstart your career with us at one of our esteemed institutions.
+              </p>
+              <div className="mt-8 flex justify-start gap-4">
+                <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+                  <a href="#institutions">Explore Institutions</a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <a href="#contact">Apply Now</a>
+                </Button>
+              </div>
+            </div>
+             <div className="relative h-96 w-full rounded-lg">
+                <Image
+                src="https://placehold.co/600x600"
+                alt="EGS Pillay Campus"
+                data-ai-hint="university students studying"
+                fill
+                className="rounded-xl object-cover shadow-lg"
+                />
             </div>
           </div>
         </section>
@@ -196,74 +188,7 @@ export default function Home() {
             </div>
         </section>
         
-        <section id="admissions" className="bg-secondary py-16 md:py-24">
-          <div className="container">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-                Admission Highlights
-              </h2>
-              <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
-                Key information for prospective students for the 2025-2026 academic year.
-              </p>
-            </div>
-            <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <Calendar className="h-6 w-6 text-primary" />
-                    Important Dates
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-4">
-                    {importantDates.map((item) => (
-                      <li key={item.event} className="flex justify-between">
-                        <span>{item.event}</span>
-                        <span className="font-semibold">{item.date}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <FileText className="h-6 w-6 text-primary" />
-                    Required Documents
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="grid grid-cols-1 gap-x-8 gap-y-3">
-                    {requiredDocuments.map((doc) => (
-                      <li key={doc} className="flex items-center gap-3">
-                        <BookOpen className="h-4 w-4 text-accent" />
-                        {doc}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-               <Card className="lg:col-span-1">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
-                    <Building className="h-6 w-6 text-primary" />
-                    Programs Offered
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3"><GraduationCap className="h-4 w-4 flex-shrink-0 text-accent mt-1" /><div><span className="font-semibold">Engineering:</span> B.Tech, BE, MBA, MCA, ME</div></li>
-                    <li className="flex items-start gap-3"><GraduationCap className="h-4 w-4 flex-shrink-0 text-accent mt-1" /><div><span className="font-semibold">Arts & Science:</span> Various UG & PG Degrees</div></li>
-                    <li className="flex items-start gap-3"><GraduationCap className="h-4 w-4 flex-shrink-0 text-accent mt-1" /><div><span className="font-semibold">Polytechnic:</span> Diploma Programs</div></li>
-                    <li className="flex items-start gap-3"><GraduationCap className="h-4 w-4 flex-shrink-0 text-accent mt-1" /><div><span className="font-semibold">And more...</span></div></li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        <section id="institutions" className="py-16 md:py-24">
+        <section id="institutions" className="bg-secondary py-16 md:py-24">
           <div className="container">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
@@ -302,7 +227,7 @@ export default function Home() {
       </main>
 
       <footer id="contact" className="bg-primary text-primary-foreground">
-        <div className="container grid grid-cols-1 gap-8 py-16 md:grid-cols-4">
+        <div className="container grid grid-cols-1 gap-12 py-16 md:grid-cols-4">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-bold">
               <GraduationCap className="h-8 w-8" />
@@ -311,40 +236,52 @@ export default function Home() {
             <p className="mt-4 text-sm text-primary-foreground/70">
               Committed to providing excellence in education since 1996.
             </p>
+            <div className="mt-6 flex space-x-4">
+              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Linkedin className="h-6 w-6" /></Link>
+              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Facebook className="h-6 w-6" /></Link>
+              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Twitter className="h-6 w-6" /></Link>
+              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Instagram className="h-6 w-6" /></Link>
+            </div>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:col-span-3">
-            <div>
-              <h4 className="font-semibold">Quick Links</h4>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:col-span-3">
+             <div>
+              <h4 className="font-semibold">Institutions</h4>
               <ul className="mt-4 space-y-2 text-sm">
-                <li><Link href="#admissions" className="text-primary-foreground/70 hover:text-primary-foreground">Admissions</Link></li>
-                <li><Link href="#institutions" className="text-primary-foreground/70 hover:text-primary-foreground">Institutions</Link></li>
-                <li><Link href="#about" className="text-primary-foreground/70 hover:text-primary-foreground">About Us</Link></li>
+                 {institutions.map((inst) => (
+                  <li key={inst.name}><a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground">{inst.name}</a></li>
+                 ))}
               </ul>
             </div>
             <div>
               <h4 className="font-semibold">Contact Us</h4>
-              <ul className="mt-4 space-y-2 text-sm">
-                <li className="flex items-center gap-2 text-primary-foreground/70"><Mail className="h-4 w-4" /> admissions@egspillay.ac.in</li>
-                <li className="flex items-center gap-2 text-primary-foreground/70"><Phone className="h-4 w-4" /> +91-4632-220-179</li>
+              <ul className="mt-4 space-y-3 text-sm">
+                <li className="flex items-start gap-2 text-primary-foreground/70">
+                  <MapPin className="h-4 w-4 flex-shrink-0 mt-1" /> 
+                  <span>Old, Nagore Main Rd, Thethi village, Nagore, Nagapattinam, Tamil Nadu 611002</span>
+                </li>
+                <li className="flex items-center gap-2 text-primary-foreground/70"><Mail className="h-4 w-4" /> enquiry@egspec.org</li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-semibold">Follow Us</h4>
-              <div className="mt-4 flex space-x-4">
-                <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Linkedin className="h-6 w-6" /></Link>
-                <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Facebook className="h-6 w-6" /></Link>
-                <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Twitter className="h-6 w-6" /></Link>
-                <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Instagram className="h-6 w-6" /></Link>
-              </div>
+             <div>
+              <h4 className="font-semibold">Admissions</h4>
+               <ul className="mt-4 space-y-2 text-sm">
+                <li className="flex items-center gap-2 text-primary-foreground/70"><Phone className="h-4 w-4" /> +91 99768 88999</li>
+                <li className="flex items-center gap-2 text-primary-foreground/70"><Phone className="h-4 w-4" /> +91 86809 54537</li>
+                <li className="flex items-center gap-2 text-primary-foreground/70"><Mail className="h-4 w-4" /> admission@egspec.org</li>
+              </ul>
+               <h4 className="font-semibold mt-4">Controller of Exams</h4>
+                 <ul className="mt-2 space-y-2 text-sm">
+                    <li className="flex items-center gap-2 text-primary-foreground/70"><Phone className="h-4 w-4" /> 04365 - 251112</li>
+                     <li className="flex items-center gap-2 text-primary-foreground/70"><Mail className="h-4 w-4" /> enquiry@egspec.org</li>
+                </ul>
             </div>
-          </div>
-        </div>
-        <div className="bg-primary/90 py-4">
-          <div className="container text-center text-sm text-primary-foreground/50">
-            &copy; {new Date().getFullYear()} EGS Pillay Group of Institutions. All Rights Reserved.
           </div>
         </div>
       </footer>
+      <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
+          <p>Copyright © 2006 - {currentYear} All Rights Reserved by EGS Pillay Group of Institutions</p>
+          <p className="mt-1">Developed By Raghavan Jeeva</p>
+        </div>
     </div>
   );
 }
