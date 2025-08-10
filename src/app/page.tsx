@@ -269,11 +269,6 @@ export default function Home() {
                 <li className="flex items-center gap-2 text-primary-foreground/70"><Phone className="h-4 w-4" /> +91 86809 54537</li>
                 <li className="flex items-center gap-2 text-primary-foreground/70"><Mail className="h-4 w-4" /> admission@egspec.org</li>
               </ul>
-               <h4 className="font-semibold mt-4">Controller of Exams</h4>
-                 <ul className="mt-2 space-y-2 text-sm">
-                    <li className="flex items-center gap-2 text-primary-foreground/70"><Phone className="h-4 w-4" /> 04365 - 251112</li>
-                     <li className="flex items-center gap-2 text-primary-foreground/70"><Mail className="h-4 w-4" /> enquiry@egspec.org</li>
-                </ul>
             </div>
           </div>
         </div>
