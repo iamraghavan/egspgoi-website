@@ -49,21 +49,21 @@ const colleges = [
     description: "Top BE, B.Tech, ME, MBA & MCA courses.",
     image: "/assets/institutions/eng.webp",
     hint: "modern campus",
-    href: "#",
+    href: "https://egspec.org/",
   },
   {
     name: "EGS Pillay Arts & Science College",
     description: "A wide range of courses in arts and science.",
     image: "/assets/institutions/arts.webp",
     hint: "university library",
-    href: "#",
+    href: "https://egspcas.ac.in/",
   },
   {
     name: "EGS Pillay Polytechnic College",
     description: "Practical diploma programs for technical skills.",
     image: "/assets/institutions/poly.webp",
     hint: "workshop students",
-    href: "#",
+    href: "https://egsppc.in/",
   },
   {
     name: "EGS Pillay College of Education",
@@ -77,21 +77,21 @@ const colleges = [
     description: "Quality education for a career in nursing.",
     image: "/assets/institutions/nursing.webp",
     hint: "medical students",
-    href: "#",
+    href: "http://egspcn.in/",
   },
   {
     name: "EGS Pillay College of Pharmacy",
     description: "Expert training in pharmaceutical sciences.",
     image: "/assets/institutions/pharmacy.webp",
     hint: "science laboratory",
-    href: "#",
+    href: "http://egsppharmacy.in/",
   },
   {
     name: "EGS Pillay Naturopathy and Yoga Medical College",
     description: "Learn about natural health and wellness.",
     image: "/assets/institutions/naturopathy.webp",
     hint: "yoga meditation",
-    href: "#",
+    href: "https://egspillaynaturopathy.com/",
   },
 ];
 
@@ -101,7 +101,7 @@ const schools = [
     description: "CBSE curriculum for excellent school education.",
     image: "/assets/institutions/school.webp",
     hint: "school children",
-    href: "#",
+    href: "https://www.egspillayschool.in/",
   },
 ]
 
@@ -163,29 +163,36 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-       <section className="relative w-full overflow-hidden py-24 md:py-32">
-          <div className="absolute inset-0 z-0 bg-cover bg-center" style={{backgroundImage: "url('/assets/hero-bg.webp')"}}>
-            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-          </div>
-          <div className="absolute inset-0 z-0">
-              <div className="absolute left-[-10%] top-[10%] h-[400px] w-[400px] rounded-full bg-primary/20 blur-[120px]"></div>
-              <div className="absolute right-[-10%] bottom-[5%] h-[400px] w-[400px] rounded-full bg-accent/20 blur-[120px]"></div>
-          </div>
-          <div className="container relative z-10 grid grid-cols-1 items-center gap-12 text-center">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl" style={{ fontWeight: 600 }}>
+       <section className="relative w-full overflow-hidden bg-secondary">
+          <div className="container grid grid-cols-1 items-center gap-12 py-24 md:grid-cols-2 md:py-32">
+            <div className="relative z-10">
+              <h1 className="text-4xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
                 A Legacy of Educational Excellence
               </h1>
-              <p className="mt-6 text-lg text-white/80 md:text-xl">
-                The EGS Pillay Group is a leader in education, dedicated to creating the next generation of leaders and thinkers. We provide a top-quality educational experience that helps students reach their full potential.
+              <p className="mt-6 text-lg text-muted-foreground md:text-xl">
+                The EGS Pillay Group is a leader in education, dedicated to creating the next generation of leaders and thinkers.
               </p>
-              <div className="mt-10 flex justify-center gap-4">
+              <div className="mt-10 flex flex-wrap gap-4">
                 <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
                   <a href="#institutions">Discover Our Institutions</a>
                 </Button>
-                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary" asChild>
+                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
                   <a href="#contact">Get In Touch</a>
                 </Button>
+              </div>
+            </div>
+
+            <div className="relative h-[400px] w-full md:h-[500px]">
+              <div className="absolute inset-0 z-0">
+                  <div className="absolute -left-12 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-primary/20 blur-3xl"></div>
+                  <div className="absolute -right-12 bottom-0 h-64 w-64 rounded-full bg-accent/20 blur-3xl"></div>
+              </div>
+              <div className="group relative h-full w-full overflow-hidden rounded-2xl">
+                <ImageWithFallback src="/assets/about/1.webp" alt="Founder of EGS Pillay Group, Chevalier. Dr. G.S. Pillay" fill className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-105" priority fallbackSrc="/assets/egspgoi___logo.webp" fallbackClassName="object-contain p-8"/>
+                <div className="absolute inset-x-4 bottom-4 z-10 rounded-xl border border-white/20 bg-black/20 p-6 backdrop-blur-lg">
+                    <h3 className="text-2xl font-bold text-white">Admissions Open</h3>
+                    <p className="mt-2 text-white/80">Join us for the 2025-2026 academic year and build your future.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -312,7 +319,7 @@ export default function Home() {
             </div>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {institutions.map((inst) => (
-                <Card key={inst.name} className="flex flex-col overflow-hidden transition-shadow duration-300">
+                <Card key={inst.name} className="flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-lg">
                   <div className="relative h-48 w-full">
                     <ImageWithFallback
                       src={inst.image}
@@ -332,7 +339,7 @@ export default function Home() {
                   </CardContent>
                   <CardFooter>
                     <Button variant="link" asChild className="p-0">
-                      <a href="#">Learn More<span className="sr-only"> about {inst.name}</span></a>
+                      <a href={inst.href} target="_blank" rel="noopener noreferrer">Learn More<span className="sr-only"> about {inst.name}</span></a>
                     </Button>
                   </CardFooter>
                 </Card>
