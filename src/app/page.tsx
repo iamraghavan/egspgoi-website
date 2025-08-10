@@ -43,49 +43,49 @@ import { ContactUs } from "@/components/ContactUs";
 const colleges = [
   {
     name: "EGS Pillay Engineering College",
-    description: "B.Tech, BE, MBA, MCA, ME Programs.",
+    description: "Top BE, B.Tech, ME, MBA & MCA courses.",
     image: "/assets/institutions/eng.webp",
     hint: "modern campus",
     href: "#",
   },
   {
     name: "EGS Pillay Arts & Science College",
-    description: "Courses in various arts and science disciplines.",
+    description: "A wide range of courses in arts and science.",
     image: "/assets/institutions/arts.webp",
     hint: "university library",
     href: "#",
   },
   {
     name: "EGS Pillay Polytechnic College",
-    description: "Offering various diploma programs.",
+    description: "Practical diploma programs for technical skills.",
     image: "/assets/institutions/poly.webp",
     hint: "workshop students",
     href: "#",
   },
   {
     name: "EGS Pillay College of Education",
-    description: "Focused on high-quality teacher training.",
+    description: "Training the next generation of great teachers.",
     image: "/assets/institutions/edu.webp",
     hint: "lecture hall",
     href: "#",
   },
   {
     name: "EGS Pillay College and School of Nursing",
-    description: "Comprehensive nursing education programs.",
+    description: "Quality education for a career in nursing.",
     image: "/assets/institutions/nursing.webp",
     hint: "medical students",
     href: "#",
   },
   {
     name: "EGS Pillay College of Pharmacy",
-    description: "Specialized education in pharmaceutical sciences.",
+    description: "Expert training in pharmaceutical sciences.",
     image: "/assets/institutions/pharmacy.webp",
     hint: "science laboratory",
     href: "#",
   },
   {
     name: "EGS Pillay Naturopathy and Yoga Medical College",
-    description: "Holistic healthcare through naturopathy and yoga.",
+    description: "Learn about natural health and wellness.",
     image: "/assets/institutions/naturopathy.webp",
     hint: "yoga meditation",
     href: "#",
@@ -95,7 +95,7 @@ const colleges = [
 const schools = [
     {
     name: "EGS Pillay International School",
-    description: "CBSE curriculum for a world-class education.",
+    description: "CBSE curriculum for excellent school education.",
     image: "/assets/institutions/school.webp",
     hint: "school children",
     href: "#",
@@ -188,7 +188,7 @@ export default function Home() {
                 A Legacy of Educational Excellence
               </h1>
               <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-                The EGS Pillay Group is a beacon of learning, committed to nurturing the next generation of leaders, innovators, and thinkers. We provide a transformative educational experience that empowers students to achieve their highest potential.
+                The EGS Pillay Group is a leader in education, dedicated to creating the next generation of leaders and thinkers. We provide a top-quality educational experience that helps students reach their full potential.
               </p>
               <div className="mt-10 flex justify-center gap-4">
                 <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
@@ -206,9 +206,14 @@ export default function Home() {
             <div className="container">
                 <div className="grid items-center gap-12 md:grid-cols-2">
                     <div>
-                        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">About</h2>
-                        <p className="mt-4 text-muted-foreground">The EGS Pillay Group of Institutions is a premier educational provider with a rich history of fostering academic excellence and innovation. We are dedicated to providing a transformative learning experience that prepares students for success in a rapidly changing world.</p>
-                        <p className="mt-4 text-muted-foreground">Our group comprises a diverse range of colleges and schools, each specializing in different fields of study, from engineering and technology to arts, sciences, and holistic healthcare. We are committed to nurturing talent and empowering our students to become leaders in their chosen professions.</p>
+                        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">About Us</h2>
+                        <h3 className="text-xl font-semibold tracking-tight text-primary mt-2">EGS Pillay Group of Institutions</h3>
+                        <p className="mt-4 text-muted-foreground">
+                            Our journey began with the great vision of our founder, Chevalier Dr. G.S. Pillay, who wanted to make quality education available to everyone. We started with a mission to provide excellent learning that helps students from all backgrounds succeed in life. Today, we are proud to be one of the top educational groups in the region.
+                        </p>
+                        <p className="mt-4 text-muted-foreground">
+                            We offer a wide variety of courses in our different colleges, from Engineering and Technology to Arts, Science, and Healthcare. Our main goal is to support our students and give them the skills they need to become future leaders and build a successful career.
+                        </p>
                     </div>
                     <div className="w-full aspect-[4/5] relative">
                         <Image src="/assets/about/1.webp" alt="About us" fill className="rounded-lg object-cover" />
@@ -234,7 +239,7 @@ export default function Home() {
                 Our Institutions
               </h2>
               <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
-                A diverse group of colleges dedicated to quality education.
+                We have many colleges, each offering high-quality education in different fields.
               </p>
             </div>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -271,10 +276,10 @@ export default function Home() {
         <div className="container grid grid-cols-1 gap-12 py-16 md:grid-cols-4">
           <div className="md:col-span-1">
             <Link href="/" className="inline-block rounded-lg bg-white p-2">
-                <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={140} height={35} className="h-auto w-auto" />
+                <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={120} height={30} className="h-auto w-auto" />
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/70">
-              Committed to providing excellence in education since 1996.
+              Providing excellent education and building futures since 1996.
             </p>
             <div className="mt-6 flex space-x-4">
               <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Linkedin className="h-6 w-6" /></Link>

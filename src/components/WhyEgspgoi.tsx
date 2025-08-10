@@ -3,22 +3,22 @@ export function WhyEgspgoi() {
         {
             number: "01",
             title: "Legacy of Excellence",
-            description: "With a rich history of academic achievements, we provide a strong foundation for your success."
+            description: "With a long history of success, we give you a strong start for your career."
         },
         {
             number: "02",
-            title: "Expert Faculty",
-            description: "Learn from experienced and dedicated educators who are experts in their fields."
+            title: "Expert Teachers",
+            description: "Learn from dedicated teachers who are masters in their subjects."
         },
         {
             number: "03",
-            title: "State-of-the-Art Infrastructure",
-            description: "Access modern labs, libraries, and facilities that enhance your learning experience."
+            title: "Modern Campus",
+            description: "Use the best labs, libraries, and classrooms to help you learn better."
         },
         {
             number: "04",
-            title: "Holistic Development",
-            description: "We focus on your overall growth, nurturing both your academic and personal skills."
+            title: "Overall Development",
+            description: "We focus on your complete growth, helping you build both academic and personal skills."
         }
     ];
 
@@ -26,9 +26,9 @@ export function WhyEgspgoi() {
         <section className="bg-background py-16 md:py-24">
             <div className="container">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Why EGS Pillay Group of Institutions?</h2>
+                    <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Why Choose EGS Pillay Group of Institutions?</h2>
                     <p className="lead fs-lg mx-auto mt-2 max-w-2xl text-muted-foreground">
-                        Discover the advantages of studying at one of our esteemed institutions.
+                        Find out why studying at our top colleges is the best choice for you.
                     </p>
                 </div>
                 <div className="relative">

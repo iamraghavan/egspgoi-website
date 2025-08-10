@@ -5,8 +5,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "EGS Pillay Group of Institutions | Admissions 2025-2026",
   description:
-    "Explore a wide range of courses and find your perfect fit at EGS Pillay Group of Institutions. Admissions are open for the 2025-2026 academic year.",
-  keywords: "EGS Pillay, admissions, engineering, arts, science, nursing, pharmacy, education, polytechnic, international school, naturopathy, yoga, college, university",
+    "Admissions open for 2025-2026 at EGS Pillay Group of Institutions. We offer top courses in Engineering, Arts, Science, Nursing, and more. Join us for a bright future.",
+  keywords: "EGS Pillay admissions, engineering college, arts and science college, nursing college, pharmacy college, education college, polytechnic, international school, naturopathy and yoga, top colleges in Nagapattinam",
 };
 
 export default function RootLayout({
