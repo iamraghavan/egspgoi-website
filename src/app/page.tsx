@@ -109,9 +109,13 @@ function Copyright() {
     setCurrentYear(new Date().getFullYear());
   }, []);
 
+  if (currentYear === null) {
+    return null; 
+  }
+
   return (
     <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
-      <p>Copyright © 2006 - {currentYear || new Date().getFullYear()} All Rights Reserved by EGS Pillay Group of Institutions</p>
+      <p>Copyright © 2006 - {currentYear} All Rights Reserved by EGS Pillay Group of Institutions</p>
       <p className="mt-1">Developed By Raghavan Jeeva</p>
     </div>
   );
