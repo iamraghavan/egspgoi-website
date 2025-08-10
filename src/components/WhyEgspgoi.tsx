@@ -26,13 +26,12 @@ export function WhyEgspgoi() {
         <section className="bg-background py-16 md:py-24">
             <div className="container">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Why EGS Pillay Group?</h2>
+                    <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Why EGS Pillay Group of Institutions?</h2>
                     <p className="lead fs-lg mx-auto mt-2 max-w-2xl text-muted-foreground">
                         Discover the advantages of studying at one of our esteemed institutions.
                     </p>
                 </div>
                 <div className="relative">
-                    <div className="absolute left-0 right-0 top-1/2 h-0.5 -translate-y-1/2 bg-gray-200 hidden md:block" aria-hidden="true"></div>
                     <div className="grid gap-12 md:grid-cols-4 md:gap-8 relative">
                         {processSteps.map((step, index) => (
                             <div key={step.number} className="relative text-center">
