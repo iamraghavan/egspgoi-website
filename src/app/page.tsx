@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -31,6 +32,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import React, { useState, useEffect } from "react";
+
 
 const colleges = [
   {
@@ -88,8 +91,23 @@ const schools = [
 
 const institutions = [...colleges, ...schools];
 
+function Copyright() {
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
+  return (
+    <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
+      <p>Copyright © 2006 - {currentYear} All Rights Reserved by EGS Pillay Group of Institutions</p>
+      <p className="mt-1">Developed By Raghavan Jeeva</p>
+    </div>
+  );
+}
+
 export default function Home() {
-  const currentYear = new Date().getFullYear();
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm">
@@ -253,6 +271,14 @@ export default function Home() {
               </ul>
             </div>
             <div>
+              <h4 className="font-semibold">Admissions</h4>
+               <ul className="mt-4 space-y-2 text-sm">
+                <li className="flex items-center gap-2 text-primary-foreground/70"><Phone className="h-4 w-4" /> +91 99768 88999</li>
+                <li className="flex items-center gap-2 text-primary-foreground/70"><Phone className="h-4 w-4" /> +91 86809 54537</li>
+                <li className="flex items-center gap-2 text-primary-foreground/70"><Mail className="h-4 w-4" /> admission@egspec.org</li>
+              </ul>
+            </div>
+            <div>
               <h4 className="font-semibold">Contact Us</h4>
               <ul className="mt-4 space-y-3 text-sm">
                 <li className="flex items-start gap-2 text-primary-foreground/70">
@@ -262,21 +288,10 @@ export default function Home() {
                 <li className="flex items-center gap-2 text-primary-foreground/70"><Mail className="h-4 w-4" /> enquiry@egspec.org</li>
               </ul>
             </div>
-             <div>
-              <h4 className="font-semibold">Admissions</h4>
-               <ul className="mt-4 space-y-2 text-sm">
-                <li className="flex items-center gap-2 text-primary-foreground/70"><Phone className="h-4 w-4" /> +91 99768 88999</li>
-                <li className="flex items-center gap-2 text-primary-foreground/70"><Phone className="h-4 w-4" /> +91 86809 54537</li>
-                <li className="flex items-center gap-2 text-primary-foreground/70"><Mail className="h-4 w-4" /> admission@egspec.org</li>
-              </ul>
-            </div>
           </div>
         </div>
       </footer>
-      <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
-          <p>Copyright © 2006 - {currentYear} All Rights Reserved by EGS Pillay Group of Institutions</p>
-          <p className="mt-1">Developed By Raghavan Jeeva</p>
-        </div>
+      <Copyright />
     </div>
   );
 }
