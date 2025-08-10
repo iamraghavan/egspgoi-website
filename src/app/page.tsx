@@ -33,6 +33,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import React, { useState, useEffect } from "react";
+import { ProgrammesOffered } from "@/components/ProgrammesOffered";
+import { CampusView } from "@/components/CampusView";
+import { DownloadBrochure } from "@/components/DownloadBrochure";
+import { WhyEgspgoi } from "@/components/WhyEgspgoi";
 
 
 const colleges = [
@@ -97,7 +101,6 @@ function Copyright() {
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
   }, []);
-
 
   if (!currentYear) {
     return null;
@@ -189,6 +192,16 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="py-16 md:py-24">
+            <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
+                <ProgrammesOffered />
+                <CampusView />
+                <DownloadBrochure />
+            </div>
+        </section>
+        
+        <WhyEgspgoi />
 
 
         <section id="about" className="py-16 md:py-24">
