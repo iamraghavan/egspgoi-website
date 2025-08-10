@@ -258,7 +258,7 @@ export default function Home() {
         <div className="container grid grid-cols-1 gap-12 py-16 md:grid-cols-4">
           <div className="md:col-span-1">
             <Link href="/" className="inline-block rounded-lg bg-white p-2">
-                <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={200} height={53} className="h-auto w-auto" />
+                <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={150} height={40} className="h-auto w-auto" />
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/70">
               Committed to providing excellence in education since 1996.
