@@ -173,10 +173,10 @@ export default function Home() {
                   <div className="absolute top-[0%] right-[-25%] w-20 h-20 bg-primary/20 rounded-3xl -rotate-45 animate-pulse hidden lg:block" aria-hidden="true"></div>
                   <div className="absolute bottom-[25%] right-[-17%] w-12 h-12 bg-accent/20 rounded-full animate-pulse hidden lg:block" aria-hidden="true"></div>
                   
-                  <h1 className="text-4xl font-extrabold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
+                  <h1 className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
                       A Legacy of Educational Excellence
                   </h1>
-                  <p className="mt-6 text-lg leading-8 text-muted-foreground md:text-xl">
+                  <p className="mt-6 text-lg leading-8 text-muted-foreground md:text-xl max-w-2xl mx-auto">
                       The EGS Pillay Group is a leader in education, dedicated to creating the next generation of leaders and thinkers.
                   </p>
                   <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
