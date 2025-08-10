@@ -136,6 +136,7 @@ export default function Home() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+             <a href="https://ac.egspgroup.in/ERP" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">ERP Portal</a>
             <Link href="#contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Contact Us</Link>
           </nav>
           <div className="ml-auto flex items-center md:hidden">
@@ -155,6 +156,7 @@ export default function Home() {
                                     <Link key={inst.name} href="#" target="_blank" className="text-muted-foreground">{inst.name}</Link>
                                 ))}
                             </div>
+                           <a href="https://ac.egspgroup.in/ERP" target="_blank" rel="noopener noreferrer" className="text-lg font-medium">ERP Portal</a>
                            <Link href="#contact" className="text-lg font-medium">Contact Us</Link>
                       </div>
                   </SheetContent>
@@ -256,8 +258,7 @@ export default function Home() {
         <div className="container grid grid-cols-1 gap-12 py-16 md:grid-cols-4">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-bold">
-              <GraduationCap className="h-8 w-8" />
-              <span className="text-xl">EGS Pillay Group</span>
+              <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={150} height={40} className="h-10 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/70">
               Committed to providing excellence in education since 1996.
