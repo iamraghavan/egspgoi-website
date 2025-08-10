@@ -43,44 +43,51 @@ const colleges = [
   {
     name: "EGS Pillay Engineering College",
     description: "B.Tech, BE, MBA, MCA, ME Programs.",
-    image: "https://placehold.co/600x400",
+    image: "/assets/institutions/eng.webp",
     hint: "modern campus",
+    href: "#",
   },
   {
     name: "EGS Pillay Arts & Science College",
     description: "Courses in various arts and science disciplines.",
-    image: "https://placehold.co/600x400",
+    image: "/assets/institutions/arts.webp",
     hint: "university library",
+    href: "#",
   },
   {
     name: "EGS Pillay Polytechnic College",
     description: "Offering various diploma programs.",
-    image: "https://placehold.co/600x400",
+    image: "/assets/institutions/poly.webp",
     hint: "workshop students",
+    href: "#",
   },
   {
     name: "EGS Pillay College of Education",
     description: "Focused on high-quality teacher training.",
-    image: "https://placehold.co/600x400",
+    image: "/assets/institutions/edu.webp",
     hint: "lecture hall",
+    href: "#",
   },
   {
     name: "EGS Pillay College and School of Nursing",
     description: "Comprehensive nursing education programs.",
-    image: "https://placehold.co/600x400",
+    image: "/assets/institutions/nursing.webp",
     hint: "medical students",
+    href: "#",
   },
   {
     name: "EGS Pillay College of Pharmacy",
     description: "Specialized education in pharmaceutical sciences.",
-    image: "https://placehold.co/600x400",
+    image: "/assets/institutions/pharmacy.webp",
     hint: "science laboratory",
+    href: "#",
   },
   {
     name: "EGS Pillay Naturopathy and Yoga Medical College",
     description: "Holistic healthcare through naturopathy and yoga.",
-    image: "https://placehold.co/600x400",
+    image: "/assets/institutions/naturopathy.webp",
     hint: "yoga meditation",
+    href: "#",
   },
 ];
 
@@ -88,8 +95,9 @@ const schools = [
     {
     name: "EGS Pillay International School",
     description: "CBSE curriculum for a world-class education.",
-    image: "https://placehold.co/600x400",
+    image: "/assets/institutions/school.webp",
     hint: "school children",
+    href: "#",
   },
 ]
 
@@ -99,8 +107,11 @@ function Copyright() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+    const year = new Date().getFullYear();
+    if (year !== currentYear) {
+      setCurrentYear(year);
+    }
+  }, [currentYear]);
 
   return (
     <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
@@ -109,6 +120,7 @@ function Copyright() {
     </div>
   );
 }
+
 
 export default function Home() {
 
@@ -131,7 +143,7 @@ export default function Home() {
               <DropdownMenuContent>
                 {institutions.map((inst) => (
                     <DropdownMenuItem key={inst.name} asChild>
-                        <a href="#" target="_blank" rel="noopener noreferrer">{inst.name}</a>
+                        <a href={inst.href} target="_blank" rel="noopener noreferrer">{inst.name}</a>
                     </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -153,7 +165,7 @@ export default function Home() {
                            <p className="text-lg font-medium">Institutions</p>
                             <div className="flex flex-col gap-4 pl-4">
                                 {institutions.map((inst) => (
-                                    <Link key={inst.name} href="#" target="_blank" className="text-muted-foreground">{inst.name}</Link>
+                                    <Link key={inst.name} href={inst.href} target="_blank" className="text-muted-foreground">{inst.name}</Link>
                                 ))}
                             </div>
                            <a href="https://ac.egspgroup.in/ERP" target="_blank" rel="noopener noreferrer" className="text-lg font-medium">ERP Portal</a>
@@ -200,7 +212,7 @@ export default function Home() {
                         <p className="mt-4 text-muted-foreground">Our group comprises a diverse range of colleges and schools, each specializing in different fields of study, from engineering and technology to arts, sciences, and holistic healthcare. We are committed to nurturing talent and empowering our students to become leaders in their chosen professions.</p>
                     </div>
                     <div className="h-80 w-full">
-                        <Image src="https://placehold.co/600x400" alt="About us" data-ai-hint="students walking" width={600} height={400} className="h-full w-full rounded-lg object-cover shadow-lg" />
+                        <Image src="https://placehold.co/600x400" alt="About us" data-ai-hint="students walking" width={600} height={400} className="h-full w-full rounded-lg object-cover" />
                     </div>
                 </div>
             </div>
@@ -209,7 +221,7 @@ export default function Home() {
         <section className="py-16 md:py-24 bg-secondary">
             <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
                 <ProgrammesOffered />
-                <CampusView />
+                <CampusView institutions={institutions} />
                 <DownloadBrochure />
             </div>
         </section>
@@ -228,7 +240,7 @@ export default function Home() {
             </div>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {institutions.map((inst) => (
-                <Card key={inst.name} className="flex flex-col overflow-hidden shadow-md transition-shadow duration-300 hover:shadow-xl">
+                <Card key={inst.name} className="flex flex-col overflow-hidden transition-shadow duration-300">
                   <div className="relative h-48 w-full">
                     <Image
                       src={inst.image}
@@ -258,7 +270,7 @@ export default function Home() {
         <div className="container grid grid-cols-1 gap-12 py-16 md:grid-cols-4">
           <div className="md:col-span-1">
             <Link href="/" className="inline-block rounded-lg bg-white p-2">
-                <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={150} height={40} className="h-auto w-auto" />
+                <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={140} height={35} className="h-auto w-auto" />
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/70">
               Committed to providing excellence in education since 1996.
@@ -275,10 +287,10 @@ export default function Home() {
               <h4 className="font-semibold">Institutions</h4>
               <ul className="mt-4 space-y-2 text-sm">
                  {colleges.map((inst) => (
-                  <li key={inst.name}><a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground">{inst.name}</a></li>
+                  <li key={inst.name}><a href={inst.href} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground">{inst.name}</a></li>
                  ))}
                  {schools.map((inst) => (
-                    <li key={inst.name}><a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground">{inst.name}</a></li>
+                    <li key={inst.name}><a href={inst.href} target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground">{inst.name}</a></li>
                  ))}
               </ul>
             </div>
