@@ -163,38 +163,31 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-       <section className="relative w-full overflow-hidden bg-secondary">
-          <div className="container grid grid-cols-1 items-center gap-12 py-24 md:grid-cols-2 md:py-32">
-            <div className="relative z-10">
-              <h1 className="text-4xl font-extrabold tracking-tight text-primary sm:text-5xl md:text-6xl">
-                A Legacy of Educational Excellence
-              </h1>
-              <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-                The EGS Pillay Group is a leader in education, dedicated to creating the next generation of leaders and thinkers.
-              </p>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
-                  <a href="#institutions">Discover Our Institutions</a>
-                </Button>
-                <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
-                  <a href="#contact">Get In Touch</a>
-                </Button>
+        <section className="relative w-full overflow-hidden bg-secondary py-24 sm:py-32">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-gradient-radial from-primary/15 via-accent/10 to-transparent blur-3xl" aria-hidden="true"></div>
+          <div className="container relative text-center">
+              <div className="relative mx-auto max-w-3xl">
+                  {/* Decorative shapes */}
+                  <div className="absolute top-[-5%] left-[-15%] w-16 h-16 bg-primary/20 rounded-full animate-pulse hidden lg:block" aria-hidden="true"></div>
+                  <div className="absolute bottom-[30%] left-[-20%] w-24 h-24 bg-accent/20 rounded-xl rotate-12 animate-pulse hidden lg:block" aria-hidden="true"></div>
+                  <div className="absolute top-[0%] right-[-25%] w-20 h-20 bg-primary/20 rounded-3xl -rotate-45 animate-pulse hidden lg:block" aria-hidden="true"></div>
+                  <div className="absolute bottom-[25%] right-[-17%] w-12 h-12 bg-accent/20 rounded-full animate-pulse hidden lg:block" aria-hidden="true"></div>
+                  
+                  <h1 className="text-4xl font-black tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
+                      A Legacy of Educational Excellence
+                  </h1>
+                  <p className="mt-6 text-lg leading-8 text-muted-foreground md:text-xl">
+                      The EGS Pillay Group is a leader in education, dedicated to creating the next generation of leaders and thinkers.
+                  </p>
+                  <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                      <Button size="lg" className="bg-primary hover:bg-primary/90 rounded-full" asChild>
+                          <a href="#institutions">Discover Our Institutions</a>
+                      </Button>
+                      <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full" asChild>
+                          <a href="#contact">Get In Touch</a>
+                      </Button>
+                  </div>
               </div>
-            </div>
-
-            <div className="relative h-[400px] w-full md:h-[500px]">
-              <div className="absolute inset-0 z-0">
-                  <div className="absolute -left-12 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-primary/20 blur-3xl"></div>
-                  <div className="absolute -right-12 bottom-0 h-64 w-64 rounded-full bg-accent/20 blur-3xl"></div>
-              </div>
-              <div className="group relative h-full w-full overflow-hidden rounded-2xl">
-                <ImageWithFallback src="/assets/about/1.webp" alt="Founder of EGS Pillay Group, Chevalier. Dr. G.S. Pillay" fill className="rounded-lg object-cover transition-transform duration-500 group-hover:scale-105" priority fallbackSrc="/assets/egspgoi___logo.webp" fallbackClassName="object-contain p-8"/>
-                <div className="absolute inset-x-4 bottom-4 z-10 rounded-xl border border-white/20 bg-black/20 p-6 backdrop-blur-lg">
-                    <h3 className="text-2xl font-bold text-white">Admissions Open</h3>
-                    <p className="mt-2 text-white/80">Join us for the 2025-2026 academic year and build your future.</p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
