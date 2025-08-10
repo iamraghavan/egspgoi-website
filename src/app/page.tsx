@@ -207,6 +207,7 @@ export default function Home() {
             <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div role="button" aria-label="Explore our programmes" className="group relative block h-full w-full cursor-pointer">
                     <div className="relative flex h-full items-end rounded-lg border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 group-hover:bg-primary/5">
+                        <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 via-primary/5 to-transparent"></div>
                         <div className="relative z-10">
                             <div className="mb-4 inline-block rounded-full bg-primary p-3 text-primary-foreground">
                                 <BookMarked className="h-6 w-6" />
