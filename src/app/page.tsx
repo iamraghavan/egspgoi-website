@@ -118,7 +118,7 @@ export default function Home() {
 
           </Link>
           <nav className="ml-auto hidden items-center gap-6 md:flex">
-            <Link href="#admissions" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Admissions</Link>
+            <a href="https://admissions.egspgroup.in/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Admissions</a>
              <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary hover:bg-transparent focus-visible:ring-0">
@@ -146,7 +146,7 @@ export default function Home() {
                   </SheetTrigger>
                   <SheetContent side="right">
                       <div className="grid gap-4 py-6">
-                           <Link href="#admissions" className="text-lg font-medium">Admissions</Link>
+                           <a href="https://admissions.egspgroup.in/" target="_blank" rel="noopener noreferrer" className="text-lg font-medium">Admissions</a>
                            <h2 className="text-lg font-medium">Institutions</h2>
                             <div className="flex flex-col gap-4 pl-4">
                                 {institutions.map((inst) => (
