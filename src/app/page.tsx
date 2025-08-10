@@ -108,7 +108,6 @@ function Copyright() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
-    // This effect runs only on the client, after hydration
     setCurrentYear(new Date().getFullYear());
   }, []);
 
@@ -209,14 +208,14 @@ export default function Home() {
                         <h2 className="text-3xl font-bold tracking-tight md:text-4xl">About Us</h2>
                         <h3 className="text-xl font-semibold tracking-tight text-primary mt-2">EGS Pillay Group of Institutions</h3>
                         <p className="mt-4 text-muted-foreground">
-                            Our journey began with the great vision of our founder, Chevalier Dr. G.S. Pillay, who wanted to make quality education available to everyone. We started with a mission to provide excellent learning that helps students from all backgrounds succeed in life. Today, we are proud to be one of the top educational groups in the region.
+                            Our journey began with a great dream from our founder, Chevalier. Dr. G.S. Pillay. He wanted to make good education easy for everyone to get. Our mission is to give excellent teaching that helps students from all backgrounds do well in life. Today, we are proud to be one of the best education groups in our area.
                         </p>
                         <p className="mt-4 text-muted-foreground">
-                            We offer a wide variety of courses in our different colleges, from Engineering and Technology to Arts, Science, and Healthcare. Our main goal is to support our students and give them the skills they need to become future leaders and build a successful career.
+                            We have many courses in our colleges, from Engineering and Technology to Arts, Science, and Health. Our main aim is to help our students and give them the right skills to become future leaders and have a good career.
                         </p>
                     </div>
                     <div className="w-full aspect-[4/5] relative">
-                        <Image src="/assets/about/1.webp" alt="About us" fill className="rounded-lg object-cover" />
+                        <Image src="/assets/about/1.webp" alt="Founder of EGS Pillay Group, Chevalier. Dr. G.S. Pillay" fill className="rounded-lg object-cover" />
                     </div>
                 </div>
             </div>
@@ -239,7 +238,7 @@ export default function Home() {
                 Our Institutions
               </h2>
               <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
-                We have many colleges, each offering high-quality education in different fields.
+                We have many colleges, each offering high-quality education in different fields. Find the right course and college for you.
               </p>
             </div>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

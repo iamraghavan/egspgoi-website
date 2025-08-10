@@ -28,7 +28,7 @@ export function WhyEgspgoi() {
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Why Choose EGS Pillay Group of Institutions?</h2>
                     <p className="lead fs-lg mx-auto mt-2 max-w-2xl text-muted-foreground">
-                        Find out why studying at our top colleges is the best choice for you.
+                        Find out why studying at our top colleges is the best choice for you. We help you succeed.
                     </p>
                 </div>
                 <div className="relative">
