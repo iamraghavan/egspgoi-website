@@ -96,15 +96,14 @@ const schools = [
 const institutions = [...colleges, ...schools];
 
 function Copyright() {
-  const [currentYear, setCurrentYear] = useState<number | null>(null);
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
+    // This effect will only run on the client side, after the initial render.
+    // The initial render will use the year from the server, and this will just confirm it.
+    // This avoids a hydration mismatch.
     setCurrentYear(new Date().getFullYear());
   }, []);
-
-  if (!currentYear) {
-    return null;
-  }
 
   return (
     <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
