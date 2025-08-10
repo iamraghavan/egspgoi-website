@@ -193,17 +193,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24">
-            <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
-                <ProgrammesOffered />
-                <CampusView />
-                <DownloadBrochure />
-            </div>
-        </section>
-        
-        <WhyEgspgoi />
-
-
         <section id="about" className="py-16 md:py-24">
             <div className="container">
                 <div className="grid items-center gap-12 md:grid-cols-2">
@@ -218,8 +207,18 @@ export default function Home() {
                 </div>
             </div>
         </section>
+
+        <section className="py-16 md:py-24 bg-secondary">
+            <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
+                <ProgrammesOffered />
+                <CampusView />
+                <DownloadBrochure />
+            </div>
+        </section>
         
-        <section id="institutions" className="bg-secondary py-16 md:py-24">
+        <WhyEgspgoi />
+        
+        <section id="institutions" className="bg-background py-16 md:py-24">
           <div className="container">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
