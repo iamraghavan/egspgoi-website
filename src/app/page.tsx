@@ -166,14 +166,14 @@ export default function Home() {
         <section className="relative w-full overflow-hidden bg-secondary py-24 sm:py-32">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-gradient-radial from-primary/15 via-accent/10 to-transparent blur-3xl" aria-hidden="true"></div>
           <div className="container relative text-center">
-              <div className="relative mx-auto max-w-3xl">
+              <div className="relative mx-auto max-w-4xl">
                   {/* Decorative shapes */}
                   <div className="absolute top-[-5%] left-[-15%] w-16 h-16 bg-primary/20 rounded-full animate-pulse hidden lg:block" aria-hidden="true"></div>
                   <div className="absolute bottom-[30%] left-[-20%] w-24 h-24 bg-accent/20 rounded-xl rotate-12 animate-pulse hidden lg:block" aria-hidden="true"></div>
                   <div className="absolute top-[0%] right-[-25%] w-20 h-20 bg-primary/20 rounded-3xl -rotate-45 animate-pulse hidden lg:block" aria-hidden="true"></div>
                   <div className="absolute bottom-[25%] right-[-17%] w-12 h-12 bg-accent/20 rounded-full animate-pulse hidden lg:block" aria-hidden="true"></div>
                   
-                  <h1 className="text-4xl font-black tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
+                  <h1 className="text-4xl font-extrabold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
                       A Legacy of Educational Excellence
                   </h1>
                   <p className="mt-6 text-lg leading-8 text-muted-foreground md:text-xl">
@@ -397,5 +397,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
