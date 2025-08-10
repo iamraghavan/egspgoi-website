@@ -171,7 +171,7 @@ export default function Home() {
           </div>
           <div className="container relative z-10 grid grid-cols-1 items-center gap-12 text-center">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
                 A Legacy of Educational Excellence
               </h1>
               <p className="mt-6 text-lg text-muted-foreground md:text-xl">
