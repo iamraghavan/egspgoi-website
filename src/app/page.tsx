@@ -96,7 +96,7 @@ const schools = [
 const institutions = [...colleges, ...schools];
 
 function Copyright() {
-  const [currentYear, setCurrentYear] = useState<number | null>(null);
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
@@ -104,7 +104,7 @@ function Copyright() {
 
   return (
     <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
-      <p>Copyright © 2006 - {currentYear || new Date().getFullYear()} All Rights Reserved by EGS Pillay Group of Institutions</p>
+      <p>Copyright © 2006 - {currentYear} All Rights Reserved by EGS Pillay Group of Institutions</p>
       <p className="mt-1">Developed By Raghavan Jeeva</p>
     </div>
   );
@@ -257,8 +257,8 @@ export default function Home() {
       <footer id="contact" className="bg-primary text-primary-foreground">
         <div className="container grid grid-cols-1 gap-12 py-16 md:grid-cols-4">
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 font-bold">
-              <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={150} height={40} className="h-10 w-auto" />
+            <Link href="/" className="inline-block rounded-lg bg-white p-2">
+                <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={200} height={53} className="h-auto w-auto" />
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/70">
               Committed to providing excellence in education since 1996.
