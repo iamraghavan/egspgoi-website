@@ -92,11 +92,15 @@ const schools = [
 const institutions = [...colleges, ...schools];
 
 function Copyright() {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
   }, []);
+
+  if (currentYear === null) {
+    return null;
+  }
 
   return (
     <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
@@ -164,18 +168,17 @@ export default function Home() {
           <div className="container grid grid-cols-1 items-center gap-8 md:grid-cols-2">
             <div className="text-left">
               <h1 className="text-4xl font-black tracking-tight text-primary md:text-5xl lg:text-6xl">
-                Admissions Open 2025-2026
+                EGS Pillay Group of Institutions
               </h1>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                Your future starts here. Discover our wide range of programs and
-                kickstart your career with us at one of our esteemed institutions.
+                A legacy of excellence in education, shaping futures and empowering communities.
               </p>
               <div className="mt-8 flex justify-start gap-4">
                 <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
                   <a href="#institutions">Explore Institutions</a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href="#contact">Apply Now</a>
+                  <a href="#contact">Contact Us</a>
                 </Button>
               </div>
             </div>
