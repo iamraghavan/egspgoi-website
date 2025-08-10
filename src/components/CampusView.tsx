@@ -1,6 +1,5 @@
-import { Video } from "lucide-react";
+import { Video, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import Image from "next/image";
 
@@ -20,20 +19,22 @@ export function CampusView({ institutions }: CampusViewProps) {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="ghost" className="h-full w-full p-0">
-                    <Card className="cursor-pointer transition-colors duration-300 hover:bg-primary/5 w-full h-full text-left">
-                        <CardHeader className="flex-row items-center gap-4">
-                            <div className="bg-primary/10 p-3 rounded-full">
-                                <Video className="h-6 w-6 text-primary" />
+                <div className="group relative block h-full w-full cursor-pointer">
+                    <div className="relative flex h-full items-end rounded-lg border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                         <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-accent/20 via-accent/5 to-transparent"></div>
+                        <div className="relative z-10">
+                            <div className="mb-4 inline-block rounded-full bg-accent p-3 text-accent-foreground">
+                                <Video className="h-6 w-6" />
                             </div>
-                            <CardTitle>360° Campus View</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground mb-4">Take a virtual tour of our sprawling, state-of-the-art campus.</p>
-                            <div className="text-primary">Take a Tour</div>
-                        </CardContent>
-                    </Card>
-                </Button>
+                            <h3 className="text-xl font-semibold text-foreground">360° Campus View</h3>
+                            <p className="mt-2 text-muted-foreground">Take a virtual tour of our sprawling, state-of-the-art campus.</p>
+                            <div className="mt-4 flex items-center font-semibold text-accent">
+                                Take a Tour
+                                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </DialogTrigger>
             <DialogContent className="max-w-4xl">
                 <DialogHeader>

@@ -108,8 +108,11 @@ function Copyright() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+    const year = new Date().getFullYear();
+    if (year !== currentYear) {
+      setCurrentYear(year);
+    }
+  }, [currentYear]);
 
   return (
     <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">

@@ -1,22 +1,22 @@
-import { BookMarked } from "lucide-react";
-import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { BookMarked, ArrowRight } from "lucide-react";
 
 export function ProgrammesOffered() {
     return (
-        <a href="#" className="block h-full w-full">
-            <Card className="cursor-pointer transition-colors duration-300 hover:bg-primary/5 w-full h-full text-left">
-                <CardHeader className="flex-row items-center gap-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                        <BookMarked className="h-6 w-6 text-primary" />
+        <a href="#" className="group relative block h-full w-full">
+            <div className="relative flex h-full items-end rounded-lg border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 via-primary/5 to-transparent"></div>
+                <div className="relative z-10">
+                    <div className="mb-4 inline-block rounded-full bg-primary p-3 text-primary-foreground">
+                        <BookMarked className="h-6 w-6" />
                     </div>
-                    <CardTitle>Programmes Offered</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground mb-4">Explore our wide range of undergraduate and postgraduate programmes.</p>
-                    <div className="text-primary font-semibold">View Programmes</div>
-                </CardContent>
-            </Card>
+                    <h3 className="text-xl font-semibold text-foreground">Programmes Offered</h3>
+                    <p className="mt-2 text-muted-foreground">Explore our wide range of undergraduate and postgraduate programmes.</p>
+                    <div className="mt-4 flex items-center font-semibold text-primary">
+                        View Programmes
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                </div>
+            </div>
         </a>
     )
 }

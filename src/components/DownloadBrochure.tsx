@@ -1,22 +1,22 @@
-import { Download } from "lucide-react";
-import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Download, ArrowRight } from "lucide-react";
 
 export function DownloadBrochure() {
     return (
-        <a href="#" className="block h-full w-full">
-            <Card className="cursor-pointer transition-colors duration-300 hover:bg-primary/5 w-full h-full text-left">
-                <CardHeader className="flex-row items-center gap-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                        <Download className="h-6 w-6 text-primary" />
+        <a href="#" className="group relative block h-full w-full">
+            <div className="relative flex h-full items-end rounded-lg border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-secondary/80 via-secondary/30 to-transparent"></div>
+                <div className="relative z-10">
+                    <div className="mb-4 inline-block rounded-full bg-primary/10 p-3 text-primary">
+                        <Download className="h-6 w-6" />
                     </div>
-                    <CardTitle>Download Brochure</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-muted-foreground mb-4">Get detailed information about our courses, facilities, and admission process.</p>
-                    <div className="text-primary font-semibold">Download Now</div>
-                </CardContent>
-            </Card>
+                    <h3 className="text-xl font-semibold text-foreground">Download Brochure</h3>
+                    <p className="mt-2 text-muted-foreground">Get detailed information about our courses, facilities, and admission process.</p>
+                    <div className="mt-4 flex items-center font-semibold text-primary">
+                        Download Now
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                </div>
+            </div>
         </a>
     )
 }
