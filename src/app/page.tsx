@@ -317,6 +317,7 @@ export default function Home() {
                       fill
                       data-ai-hint={inst.hint}
                       className="object-cover"
+                      fallbackClassName="object-contain p-4"
                     />
                   </div>
                   <CardContent className="flex flex-1 flex-col p-6">

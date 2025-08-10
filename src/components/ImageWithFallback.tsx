@@ -2,13 +2,15 @@
 
 import { useState } from "react";
 import Image, { ImageProps } from "next/image";
+import { cn } from "@/lib/utils";
 
 interface ImageWithFallbackProps extends ImageProps {
   fallbackSrc: string;
+  fallbackClassName?: string;
 }
 
 export const ImageWithFallback = (props: ImageWithFallbackProps) => {
-  const { src, fallbackSrc, ...rest } = props;
+  const { src, fallbackSrc, className, fallbackClassName, ...rest } = props;
   const [error, setError] = useState(false);
 
   const handleError = () => {
@@ -19,6 +21,7 @@ export const ImageWithFallback = (props: ImageWithFallbackProps) => {
     <Image
       src={error ? fallbackSrc : src}
       onError={handleError}
+      className={cn(className, error && fallbackClassName)}
       {...rest}
     />
   );
