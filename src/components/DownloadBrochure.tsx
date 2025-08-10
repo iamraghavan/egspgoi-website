@@ -4,7 +4,7 @@ export function DownloadBrochure() {
     return (
         <a href="#" className="group relative block h-full w-full">
             <div className="relative flex h-full items-end rounded-lg border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-secondary/80 via-secondary/30 to-transparent"></div>
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 via-primary/5 to-transparent"></div>
                 <div className="relative z-10">
                     <div className="mb-4 inline-block rounded-full bg-primary/10 p-3 text-primary">
                         <Download className="h-6 w-6" />
