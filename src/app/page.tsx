@@ -210,8 +210,8 @@ export default function Home() {
                         <p className="mt-4 text-muted-foreground">The EGS Pillay Group of Institutions is a premier educational provider with a rich history of fostering academic excellence and innovation. We are dedicated to providing a transformative learning experience that prepares students for success in a rapidly changing world.</p>
                         <p className="mt-4 text-muted-foreground">Our group comprises a diverse range of colleges and schools, each specializing in different fields of study, from engineering and technology to arts, sciences, and holistic healthcare. We are committed to nurturing talent and empowering our students to become leaders in their chosen professions.</p>
                     </div>
-                    <div className="h-80 w-full">
-                        <Image src="/assets/about/1.webp" alt="About us" width={600} height={400} className="h-full w-full rounded-lg object-cover" />
+                    <div className="w-full aspect-[4/5] relative">
+                        <Image src="/assets/about/1.webp" alt="About us" fill className="rounded-lg object-cover" />
                     </div>
                 </div>
             </div>
