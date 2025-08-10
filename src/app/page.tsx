@@ -37,7 +37,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { CampusView } from "@/components/CampusView";
 import { WhyEgspgoi } from "@/components/WhyEgspgoi";
 import { ContactUs } from "@/components/ContactUs";
 import { Copyright } from "@/components/Copyright";
@@ -214,8 +213,8 @@ export default function Home() {
             <div role="button" aria-label="Explore our programmes" className="group relative block h-full w-full cursor-pointer rounded-lg border border-black/10 bg-white p-6 transition-all duration-300 hover:bg-primary/5">
               <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 via-primary/5 to-transparent"></div>
               <div className="relative z-10 flex h-full flex-col">
-                <div className="mb-4 inline-block rounded-full bg-primary p-3 text-primary-foreground">
-                  <BookMarked className="h-6 w-6" />
+                <div className="mb-4 inline-block text-primary">
+                  <BookMarked className="h-8 w-8" />
                 </div>
                 <div className="flex-grow">
                   <h3 className="text-xl font-semibold text-foreground">Programmes Offered</h3>
@@ -233,8 +232,8 @@ export default function Home() {
                 <div role="button" aria-label="Take a virtual tour of our campus" className="group relative block h-full w-full cursor-pointer rounded-lg border border-black/10 bg-white p-6 transition-all duration-300 hover:bg-accent/5">
                   <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-accent/20 via-accent/5 to-transparent"></div>
                   <div className="relative z-10 flex h-full flex-col">
-                    <div className="mb-4 inline-block rounded-full bg-accent p-3 text-accent-foreground">
-                      <Video className="h-6 w-6" />
+                    <div className="mb-4 inline-block text-accent">
+                      <Video className="h-8 w-8" />
                     </div>
                     <div className="flex-grow">
                       <h3 className="text-xl font-semibold text-foreground">360° Campus View</h3>
@@ -279,8 +278,8 @@ export default function Home() {
             <a href="#" className="group relative block h-full w-full rounded-lg border border-black/10 bg-white p-6 transition-all duration-300 hover:bg-primary/5">
               <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 via-primary/5 to-transparent"></div>
               <div className="relative z-10 flex h-full flex-col">
-                <div className="mb-4 inline-block rounded-full bg-primary p-3 text-primary-foreground">
-                  <Download className="h-6 w-6" />
+                <div className="mb-4 inline-block text-primary">
+                  <Download className="h-8 w-8" />
                 </div>
                 <div className="flex-grow">
                   <h3 className="text-xl font-semibold text-foreground">Download Brochure</h3>
