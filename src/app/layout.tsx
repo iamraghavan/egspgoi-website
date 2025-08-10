@@ -233,8 +233,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/egs_favicon.png" sizes="any" />
-        <link rel="apple-touch-icon" href="/egs_favicon.png" />
+        <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon/icon0.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon/apple-icon.png" />
+        <link rel="manifest" href="/favicon/manifest.json" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
