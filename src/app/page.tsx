@@ -126,8 +126,8 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-background">
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm">
         <div className="container flex h-16 items-center">
-          <Link href="/" className="flex items-center gap-2 font-bold">
-            <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={150} height={40} className="h-10 w-auto" />
+          <Link href="/" className="flex items-center gap-2 font-bold" aria-label="EGS Pillay Group of Institutions Home">
+            <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={150} height={40} className="h-10 w-auto" priority />
 
           </Link>
           <nav className="ml-auto hidden items-center gap-6 md:flex">
@@ -152,7 +152,7 @@ export default function Home() {
           <div className="ml-auto flex items-center md:hidden">
               <Sheet>
                   <SheetTrigger asChild>
-                      <Button variant="ghost" size="icon">
+                      <Button variant="ghost" size="icon" aria-label="Toggle Menu">
                           <Menu className="h-6 w-6" />
                           <span className="sr-only">Toggle Menu</span>
                       </Button>
@@ -160,7 +160,7 @@ export default function Home() {
                   <SheetContent side="right">
                       <div className="grid gap-4 py-6">
                            <Link href="#admissions" className="text-lg font-medium">Admissions</Link>
-                           <p className="text-lg font-medium">Institutions</p>
+                           <h2 className="text-lg font-medium">Institutions</h2>
                             <div className="flex flex-col gap-4 pl-4">
                                 {institutions.map((inst) => (
                                     <Link key={inst.name} href={inst.href} target="_blank" className="text-muted-foreground">{inst.name}</Link>
@@ -208,14 +208,14 @@ export default function Home() {
                         <h2 className="text-3xl font-bold tracking-tight md:text-4xl">About Us</h2>
                         <h3 className="text-xl font-semibold tracking-tight text-primary mt-2">EGS Pillay Group of Institutions</h3>
                         <p className="mt-4 text-muted-foreground">
-                            Our journey began with a great dream from our founder, Chevalier. Dr. G.S. Pillay. He wanted to make good education easy for everyone to get. Our mission is to give excellent teaching that helps students from all backgrounds do well in life. Today, we are proud to be one of the best education groups in our area.
+                            Founded by the visionary Chevalier. Dr. G.S. Pillay, our journey began with a simple dream: to make quality education accessible to all. Our mission is to provide excellent teaching that helps students from all backgrounds succeed in life. Today, we are proud to be one of the top educational groups in the region.
                         </p>
                         <p className="mt-4 text-muted-foreground">
-                            We have many courses in our colleges, from Engineering and Technology to Arts, Science, and Health. Our main aim is to help our students and give them the right skills to become future leaders and have a good career.
+                            We offer a wide range of courses across our colleges, from Engineering and Technology to Arts, Science, and Health Sciences. Our main goal is to empower our students with the skills and knowledge they need to become future leaders and build successful careers.
                         </p>
                     </div>
                     <div className="w-full aspect-[4/5] relative">
-                        <Image src="/assets/about/1.webp" alt="Founder of EGS Pillay Group, Chevalier. Dr. G.S. Pillay" fill className="rounded-lg object-cover" />
+                        <Image src="/assets/about/1.webp" alt="Founder of EGS Pillay Group, Chevalier. Dr. G.S. Pillay" fill className="rounded-lg object-cover" priority />
                     </div>
                 </div>
             </div>
@@ -260,7 +260,9 @@ export default function Home() {
                     </p>
                   </CardContent>
                   <CardFooter>
-                    <Button variant="link" className="p-0">Learn More</Button>
+                    <Button variant="link" asChild className="p-0">
+                      <a href="#">Learn More<span className="sr-only"> about {inst.name}</span></a>
+                    </Button>
                   </CardFooter>
                 </Card>
               ))}
@@ -274,17 +276,17 @@ export default function Home() {
       <footer id="contact" className="bg-primary text-primary-foreground">
         <div className="container grid grid-cols-1 gap-12 py-16 md:grid-cols-4">
           <div className="md:col-span-1">
-            <Link href="/" className="inline-block rounded-lg bg-white p-2">
+            <Link href="/" className="inline-block rounded-lg bg-white p-2" aria-label="EGS Pillay Group of Institutions Home">
                 <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={120} height={30} className="h-auto w-auto" />
             </Link>
             <p className="mt-4 text-sm text-primary-foreground/70">
               Providing excellent education and building futures since 1996.
             </p>
             <div className="mt-6 flex space-x-4">
-              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Linkedin className="h-6 w-6" /></Link>
-              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Facebook className="h-6 w-6" /></Link>
-              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Twitter className="h-6 w-6" /></Link>
-              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Instagram className="h-6 w-6" /></Link>
+              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground" aria-label="LinkedIn"><Linkedin className="h-6 w-6" /></Link>
+              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground" aria-label="Facebook"><Facebook className="h-6 w-6" /></Link>
+              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground" aria-label="Twitter"><Twitter className="h-6 w-6" /></Link>
+              <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground" aria-label="Instagram"><Instagram className="h-6 w-6" /></Link>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:col-span-3">
