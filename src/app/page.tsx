@@ -164,35 +164,31 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-        <section className="relative flex h-[80vh] w-full items-center bg-secondary">
-          <div className="container grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-            <div className="text-left">
-              <h1 className="text-4xl font-black tracking-tight text-primary md:text-5xl lg:text-6xl">
-                EGS Pillay Group of Institutions
+       <section className="relative w-full overflow-hidden bg-[#F8F9FA] py-24 md:py-32">
+          <div className="absolute inset-0 z-0">
+              <div className="absolute left-[-10%] top-[10%] h-[400px] w-[400px] rounded-full bg-primary/10 blur-[100px]"></div>
+              <div className="absolute right-[-10%] bottom-[5%] h-[400px] w-[400px] rounded-full bg-accent/10 blur-[100px]"></div>
+          </div>
+          <div className="container relative z-10 grid grid-cols-1 items-center gap-12 text-center">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+                A Legacy of Educational Excellence
               </h1>
-              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                A legacy of excellence in education, shaping futures and empowering communities.
+              <p className="mt-6 text-lg text-muted-foreground md:text-xl">
+                The EGS Pillay Group is a beacon of learning, committed to nurturing the next generation of leaders, innovators, and thinkers. We provide a transformative educational experience that empowers students to achieve their highest potential.
               </p>
-              <div className="mt-8 flex justify-start gap-4">
+              <div className="mt-10 flex justify-center gap-4">
                 <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
-                  <a href="#institutions">Explore Institutions</a>
+                  <a href="#institutions">Discover Our Institutions</a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <a href="#contact">Contact Us</a>
+                  <a href="#contact">Get In Touch</a>
                 </Button>
               </div>
             </div>
-             <div className="relative h-96 w-full rounded-lg">
-                <Image
-                src="https://placehold.co/600x600"
-                alt="EGS Pillay Campus"
-                data-ai-hint="university students studying"
-                fill
-                className="rounded-xl object-cover shadow-lg"
-                />
-            </div>
           </div>
         </section>
+
 
         <section id="about" className="py-16 md:py-24">
             <div className="container">
@@ -264,12 +260,15 @@ export default function Home() {
               <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Instagram className="h-6 w-6" /></Link>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:col-span-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:col-span-3">
              <div>
               <h4 className="font-semibold">Institutions</h4>
               <ul className="mt-4 space-y-2 text-sm">
-                 {institutions.map((inst) => (
+                 {colleges.map((inst) => (
                   <li key={inst.name}><a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground">{inst.name}</a></li>
+                 ))}
+                 {schools.map((inst) => (
+                    <li key={inst.name}><a href="#" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground">{inst.name}</a></li>
                  ))}
               </ul>
             </div>
