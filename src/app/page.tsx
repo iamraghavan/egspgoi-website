@@ -37,6 +37,7 @@ import { ProgrammesOffered } from "@/components/ProgrammesOffered";
 import { CampusView } from "@/components/CampusView";
 import { DownloadBrochure } from "@/components/DownloadBrochure";
 import { WhyEgspgoi } from "@/components/WhyEgspgoi";
+import { ContactUs } from "@/components/ContactUs";
 
 
 const colleges = [
@@ -107,11 +108,9 @@ function Copyright() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
-    const year = new Date().getFullYear();
-    if (year !== currentYear) {
-      setCurrentYear(year);
-    }
-  }, [currentYear]);
+    // This effect runs only on the client, after hydration
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
@@ -264,6 +263,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <ContactUs />
       </main>
 
       <footer id="contact" className="bg-primary text-primary-foreground">
