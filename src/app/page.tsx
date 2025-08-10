@@ -2,17 +2,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  BookOpen,
-  Calendar,
-  FileText,
-  GraduationCap,
+  BookMarked,
+  Download,
+  Video,
+  ArrowRight,
   Linkedin,
   Facebook,
   Twitter,
   Instagram,
   Mail,
   Phone,
-  Building,
   Menu,
   MapPin,
 } from "lucide-react";
@@ -20,7 +19,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -105,18 +103,15 @@ const schools = [
 const institutions = [...colleges, ...schools];
 
 function Copyright() {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   useEffect(() => {
-    const year = new Date().getFullYear();
-    if (year !== currentYear) {
-      setCurrentYear(year);
-    }
-  }, [currentYear]);
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
-      <p>Copyright © 2006 - {currentYear} All Rights Reserved by EGS Pillay Group of Institutions</p>
+      <p>Copyright © 2006 - {currentYear || new Date().getFullYear()} All Rights Reserved by EGS Pillay Group of Institutions</p>
       <p className="mt-1">Developed By Raghavan Jeeva</p>
     </div>
   );
@@ -226,9 +221,38 @@ export default function Home() {
 
         <section className="py-16 md:py-24 bg-secondary">
             <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
-                <ProgrammesOffered />
+                <div role="button" aria-label="Explore our programmes" className="group relative block h-full w-full cursor-pointer">
+                    <div className="relative flex h-full items-end rounded-lg border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 group-hover:bg-primary/5">
+                        <div className="relative z-10">
+                            <div className="mb-4 inline-block rounded-full bg-primary p-3 text-primary-foreground">
+                                <BookMarked className="h-6 w-6" />
+                            </div>
+                            <h3 className="text-xl font-semibold text-foreground">Programmes Offered</h3>
+                            <p className="mt-2 text-muted-foreground">Explore our wide range of undergraduate and postgraduate programmes.</p>
+                            <div className="mt-4 flex items-center font-semibold text-primary">
+                                View Programmes
+                                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <CampusView institutions={institutions} />
-                <DownloadBrochure />
+                <a href="#" className="group relative block h-full w-full">
+                    <div className="relative flex h-full items-end rounded-lg border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 group-hover:bg-primary/5">
+                        <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 via-primary/5 to-transparent"></div>
+                        <div className="relative z-10">
+                            <div className="mb-4 inline-block rounded-full bg-primary/10 p-3 text-primary">
+                                <Download className="h-6 w-6" />
+                            </div>
+                            <h3 className="text-xl font-semibold text-foreground">Download Brochure</h3>
+                            <p className="mt-2 text-muted-foreground">Get detailed information about our courses, facilities, and admission process.</p>
+                            <div className="mt-4 flex items-center font-semibold text-primary">
+                                Download Now
+                                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
         
