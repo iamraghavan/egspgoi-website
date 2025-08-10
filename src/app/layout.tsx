@@ -5,8 +5,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "EGS Pillay Group of Institutions | Admissions 2025-2026",
   description:
-    "Explore a wide range of courses and find your perfect fit at EGS Pillay Group of Institutions. Admissions are open for the 2025-2026 academic year. Use our AI-powered tool for personalized course recommendations.",
-  keywords: "EGS Pillay, admissions, engineering, arts, science, college, university, course finder, AI recommendation",
+    "Explore a wide range of courses and find your perfect fit at EGS Pillay Group of Institutions. Admissions are open for the 2025-2026 academic year.",
+  keywords: "EGS Pillay, admissions, engineering, arts, science, nursing, pharmacy, education, polytechnic, international school, naturopathy, yoga, college, university",
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -24,7 +24,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body antialiased">
+      <body className="antialiased">
         {children}
         <Toaster />
       </body>
