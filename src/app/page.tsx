@@ -30,12 +30,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import React, { useState, useEffect } from "react";
 import { ProgrammesOffered } from "@/components/ProgrammesOffered";
 import { CampusView } from "@/components/CampusView";
 import { DownloadBrochure } from "@/components/DownloadBrochure";
 import { WhyEgspgoi } from "@/components/WhyEgspgoi";
 import { ContactUs } from "@/components/ContactUs";
+import { Copyright } from "@/components/Copyright";
 
 
 const colleges = [
@@ -101,26 +101,6 @@ const schools = [
 ]
 
 const institutions = [...colleges, ...schools];
-
-function Copyright() {
-  const [currentYear, setCurrentYear] = useState<number | null>(null);
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
-
-  if (currentYear === null) {
-    return null; 
-  }
-
-  return (
-    <div className="bg-gray-800 py-4 text-center text-sm text-gray-300">
-      <p>Copyright © 2006 - {currentYear} All Rights Reserved by EGS Pillay Group of Institutions</p>
-      <p className="mt-1">Developed By Raghavan Jeeva</p>
-    </div>
-  );
-}
-
 
 export default function Home() {
 
