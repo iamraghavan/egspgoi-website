@@ -98,7 +98,8 @@ function Copyright() {
     setCurrentYear(new Date().getFullYear());
   }, []);
 
-  if (currentYear === null) {
+
+  if (!currentYear) {
     return null;
   }
 
@@ -117,8 +118,8 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-sm">
         <div className="container flex h-16 items-center">
           <Link href="/" className="flex items-center gap-2 font-bold">
-            <GraduationCap className="h-7 w-7 text-primary" />
-            <span className="text-xl font-bold text-primary">EGS Pillay Group</span>
+            <Image src="/assets/egspgoi___logo.webp" alt="EGS Pillay Group of Institutions Logo" width={150} height={40} className="h-10 w-auto" />
+
           </Link>
           <nav className="ml-auto hidden items-center gap-6 md:flex">
             <Link href="#admissions" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Admissions</Link>
@@ -171,7 +172,7 @@ export default function Home() {
           </div>
           <div className="container relative z-10 grid grid-cols-1 items-center gap-12 text-center">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl" style={{ fontWeight: 600 }}>
                 A Legacy of Educational Excellence
               </h1>
               <p className="mt-6 text-lg text-muted-foreground md:text-xl">
@@ -194,7 +195,7 @@ export default function Home() {
             <div className="container">
                 <div className="grid items-center gap-12 md:grid-cols-2">
                     <div>
-                        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">About EGS Pillay Group</h2>
+                        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">About</h2>
                         <p className="mt-4 text-muted-foreground">The EGS Pillay Group of Institutions is a premier educational provider with a rich history of fostering academic excellence and innovation. We are dedicated to providing a transformative learning experience that prepares students for success in a rapidly changing world.</p>
                         <p className="mt-4 text-muted-foreground">Our group comprises a diverse range of colleges and schools, each specializing in different fields of study, from engineering and technology to arts, sciences, and holistic healthcare. We are committed to nurturing talent and empowering our students to become leaders in their chosen professions.</p>
                     </div>
@@ -260,7 +261,7 @@ export default function Home() {
               <Link href="#" className="text-primary-foreground/70 hover:text-primary-foreground"><Instagram className="h-6 w-6" /></Link>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:col-span-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:col-span-3">
              <div>
               <h4 className="font-semibold">Institutions</h4>
               <ul className="mt-4 space-y-2 text-sm">
