@@ -24,18 +24,24 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ProgrammesOffered } from "@/components/ProgrammesOffered";
 import { CampusView } from "@/components/CampusView";
-import { DownloadBrochure } from "@/components/DownloadBrochure";
 import { WhyEgspgoi } from "@/components/WhyEgspgoi";
 import { ContactUs } from "@/components/ContactUs";
 import { Copyright } from "@/components/Copyright";
+import { ImageWithFallback } from "@/components/ImageWithFallback";
 
 
 const colleges = [
@@ -197,48 +203,96 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="w-full aspect-[4/5] relative">
-                        <Image src="/assets/about/1.webp" alt="Founder of EGS Pillay Group, Chevalier. Dr. G.S. Pillay" fill className="rounded-lg object-cover" priority />
+                        <ImageWithFallback src="/assets/about/1.webp" alt="Founder of EGS Pillay Group, Chevalier. Dr. G.S. Pillay" fill className="rounded-lg object-cover" priority fallbackSrc="/assets/egspgoi___logo.webp" />
                     </div>
                 </div>
             </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-secondary">
-            <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div role="button" aria-label="Explore our programmes" className="group relative block h-full w-full cursor-pointer">
-                    <div className="relative flex h-full items-end rounded-lg border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 group-hover:bg-primary/5">
-                        <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 via-primary/5 to-transparent"></div>
-                        <div className="relative z-10">
-                            <div className="mb-4 inline-block rounded-full bg-primary p-3 text-primary-foreground">
-                                <BookMarked className="h-6 w-6" />
-                            </div>
-                            <h3 className="text-xl font-semibold text-foreground">Programmes Offered</h3>
-                            <p className="mt-2 text-muted-foreground">Explore our wide range of undergraduate and postgraduate programmes.</p>
-                            <div className="mt-4 flex items-center font-semibold text-primary">
-                                View Programmes
-                                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                            </div>
-                        </div>
-                    </div>
+        <section className="bg-secondary py-16 md:py-24">
+          <div className="container grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div role="button" aria-label="Explore our programmes" className="group relative block h-full w-full cursor-pointer rounded-lg border border-black/10 bg-white p-6 transition-all duration-300 hover:bg-primary/5">
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 via-primary/5 to-transparent"></div>
+              <div className="relative z-10 flex h-full flex-col">
+                <div className="mb-4 inline-block rounded-full bg-primary p-3 text-primary-foreground">
+                  <BookMarked className="h-6 w-6" />
                 </div>
-                <CampusView institutions={institutions} />
-                <a href="#" className="group relative block h-full w-full">
-                    <div className="relative flex h-full items-end rounded-lg border border-black/10 bg-white p-6 shadow-sm transition-all duration-300 group-hover:bg-primary/5">
-                        <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 via-primary/5 to-transparent"></div>
-                        <div className="relative z-10">
-                            <div className="mb-4 inline-block rounded-full bg-primary/10 p-3 text-primary">
-                                <Download className="h-6 w-6" />
-                            </div>
-                            <h3 className="text-xl font-semibold text-foreground">Download Brochure</h3>
-                            <p className="mt-2 text-muted-foreground">Get detailed information about our courses, facilities, and admission process.</p>
-                            <div className="mt-4 flex items-center font-semibold text-primary">
-                                Download Now
-                                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                <div className="flex-grow">
+                  <h3 className="text-xl font-semibold text-foreground">Programmes Offered</h3>
+                  <p className="mt-2 text-muted-foreground">Explore our wide range of undergraduate and postgraduate programmes.</p>
+                </div>
+                <div className="mt-4 flex items-center font-semibold text-primary">
+                  View Programmes
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+              </div>
             </div>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <div role="button" aria-label="Take a virtual tour of our campus" className="group relative block h-full w-full cursor-pointer rounded-lg border border-black/10 bg-white p-6 transition-all duration-300 hover:bg-accent/5">
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-accent/20 via-accent/5 to-transparent"></div>
+                  <div className="relative z-10 flex h-full flex-col">
+                    <div className="mb-4 inline-block rounded-full bg-accent p-3 text-accent-foreground">
+                      <Video className="h-6 w-6" />
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="text-xl font-semibold text-foreground">360° Campus View</h3>
+                      <p className="mt-2 text-muted-foreground">Take a virtual tour of our sprawling, state-of-the-art campus.</p>
+                    </div>
+                    <div className="mt-4 flex items-center font-semibold text-accent">
+                      Take a Tour
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                  </div>
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl">
+                  <DialogHeader>
+                      <DialogTitle>Explore Our Campuses</DialogTitle>
+                  </DialogHeader>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 max-h-[60vh] overflow-y-auto">
+                      {institutions.map((inst) => (
+                          <a 
+                              key={inst.name} 
+                              href={inst.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group block rounded-lg border p-2 text-center transition-all hover:border-primary hover:bg-primary/5"
+                          >
+                              <div className="relative h-24 w-full mb-2">
+                                  <ImageWithFallback 
+                                      src={inst.image}
+                                      fallbackSrc="/assets/egspgoi___logo.webp"
+                                      alt={`${inst.name} logo`}
+                                      fill
+                                      className="object-contain"
+                                  />
+                              </div>
+                              <p className="text-sm font-medium text-foreground group-hover:text-primary">{inst.name}</p>
+                          </a>
+                      ))}
+                  </div>
+              </DialogContent>
+            </Dialog>
+
+            <a href="#" className="group relative block h-full w-full rounded-lg border border-black/10 bg-white p-6 transition-all duration-300 hover:bg-primary/5">
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-primary/20 via-primary/5 to-transparent"></div>
+              <div className="relative z-10 flex h-full flex-col">
+                <div className="mb-4 inline-block rounded-full bg-primary p-3 text-primary-foreground">
+                  <Download className="h-6 w-6" />
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-xl font-semibold text-foreground">Download Brochure</h3>
+                  <p className="mt-2 text-muted-foreground">Get detailed information about our courses, facilities, and admission process.</p>
+                </div>
+                <div className="mt-4 flex items-center font-semibold text-primary">
+                  Download Now
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+              </div>
+            </a>
+          </div>
         </section>
         
         <WhyEgspgoi />
@@ -257,8 +311,9 @@ export default function Home() {
               {institutions.map((inst) => (
                 <Card key={inst.name} className="flex flex-col overflow-hidden transition-shadow duration-300">
                   <div className="relative h-48 w-full">
-                    <Image
+                    <ImageWithFallback
                       src={inst.image}
+                      fallbackSrc="/assets/egspgoi___logo.webp"
                       alt={inst.name}
                       fill
                       data-ai-hint={inst.hint}
