@@ -163,24 +163,27 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-       <section className="relative w-full overflow-hidden bg-[#F8F9FA] py-24 md:py-32">
+       <section className="relative w-full overflow-hidden py-24 md:py-32">
+          <div className="absolute inset-0 z-0 bg-cover bg-center" style={{backgroundImage: "url('/assets/hero-bg.webp')"}}>
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+          </div>
           <div className="absolute inset-0 z-0">
-              <div className="absolute left-[-10%] top-[10%] h-[400px] w-[400px] rounded-full bg-primary/10 blur-[100px]"></div>
-              <div className="absolute right-[-10%] bottom-[5%] h-[400px] w-[400px] rounded-full bg-accent/10 blur-[100px]"></div>
+              <div className="absolute left-[-10%] top-[10%] h-[400px] w-[400px] rounded-full bg-primary/20 blur-[120px]"></div>
+              <div className="absolute right-[-10%] bottom-[5%] h-[400px] w-[400px] rounded-full bg-accent/20 blur-[120px]"></div>
           </div>
           <div className="container relative z-10 grid grid-cols-1 items-center gap-12 text-center">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl" style={{ fontWeight: 600 }}>
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl" style={{ fontWeight: 600 }}>
                 A Legacy of Educational Excellence
               </h1>
-              <p className="mt-6 text-lg text-muted-foreground md:text-xl">
+              <p className="mt-6 text-lg text-white/80 md:text-xl">
                 The EGS Pillay Group is a leader in education, dedicated to creating the next generation of leaders and thinkers. We provide a top-quality educational experience that helps students reach their full potential.
               </p>
               <div className="mt-10 flex justify-center gap-4">
                 <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
                   <a href="#institutions">Discover Our Institutions</a>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
+                <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-primary" asChild>
                   <a href="#contact">Get In Touch</a>
                 </Button>
               </div>
@@ -202,7 +205,7 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="w-full aspect-[4/5] relative">
-                        <ImageWithFallback src="/assets/about/1.webp" alt="Founder of EGS Pillay Group, Chevalier. Dr. G.S. Pillay" fill className="rounded-lg object-cover" priority fallbackSrc="/assets/egspgoi___logo.webp" />
+                        <ImageWithFallback src="/assets/about/1.webp" alt="Founder of EGS Pillay Group, Chevalier. Dr. G.S. Pillay" fill className="rounded-lg object-cover" priority fallbackSrc="/assets/egspgoi___logo.webp" fallbackClassName="object-contain p-4"/>
                     </div>
                 </div>
             </div>
@@ -266,6 +269,7 @@ export default function Home() {
                                       alt={`${inst.name} logo`}
                                       fill
                                       className="object-contain"
+                                      fallbackClassName="object-contain"
                                   />
                               </div>
                               <p className="text-sm font-medium text-foreground group-hover:text-primary">{inst.name}</p>
@@ -393,3 +397,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
