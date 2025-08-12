@@ -9,10 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit",
-    "pages:build": "npx @cloudflare/next-on-pages@1",
-    "preview": "npm run pages:build && wrangler pages dev .vercel/output/static --compatibility-date=2024-04-03 --compatibility-flag=nodejs_compat",
-    "deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static --compatibility-date=2024-04-03 --compatibility-flag=nodejs_compat"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
@@ -60,14 +57,12 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "genkit-cli": "^1.14.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5",
-    "wrangler": "^3.67.1"
+    "typescript": "^5"
   }
 }

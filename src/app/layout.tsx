@@ -2,7 +2,7 @@ import Script from "next/script";
 import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "EGS Pillay Group of Institutions | Admissions 2025-2026",
