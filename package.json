@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit",
     "pages:build": "npx @cloudflare/next-on-pages@1",
     "preview": "npm run pages:build && wrangler pages dev .vercel/output/static --compatibility-date=2024-04-03 --compatibility-flag=nodejs_compat",
-    "deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static"
+    "deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static --compatibility-date=2024-04-03 --compatibility-flag=nodejs_compat"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
